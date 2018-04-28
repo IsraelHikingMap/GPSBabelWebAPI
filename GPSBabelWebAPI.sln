@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPSBabelWebAPI", "GPSBabelWebAPI\GPSBabelWebAPI.csproj", "{D79B15C2-290E-4670-9609-CC4E99ADA63E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0EBB9595-6D04-468D-B6B3-E0D606A9ECD5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Dockerfile = Dockerfile
+		NuGetSpecs\IsraelHiking.GPSBabel.nuspec = NuGetSpecs\IsraelHiking.GPSBabel.nuspec
+		NuGetSpecs\IsraelHiking.GPSBabel.targets = NuGetSpecs\IsraelHiking.GPSBabel.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D79B15C2-290E-4670-9609-CC4E99ADA63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D79B15C2-290E-4670-9609-CC4E99ADA63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D79B15C2-290E-4670-9609-CC4E99ADA63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D79B15C2-290E-4670-9609-CC4E99ADA63E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E1D797E-E947-45A5-9CCB-4AE7B147FEA7}
+	EndGlobalSection
+EndGlobal
