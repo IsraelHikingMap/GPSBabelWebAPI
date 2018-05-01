@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <!-- The identifier that must be unique within the hosting gallery -->
-    <id>IsraelHiking.GPSBabel</id>
+    <id>IsraelHiking.GPSBabel.Runtime.Debian</id>
     <!-- The package version number that is used when resolving dependencies -->
     <version>1.5.5-beta.2</version>
     <!-- Authors contain text that appears directly on the gallery -->
@@ -20,7 +20,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <!-- Any details about this particular release -->
     <releaseNotes></releaseNotes>
-    <summary>A cross platform compiled GPSBabel binaries for command line interface, this package references native packages</summary>
+    <summary>The debian compiled GPSBabel binaries for command line interface</summary>
     <!-- The description can be used in package manager UI. Note that the
 				nuget.org gallery uses information you add in the portal. -->
     <description>GPSBabel converts waypoints, tracks, and routes between popular GPS receivers such as Garmin or Magellan and mapping programs like Google Earth or Basecamp. Literally hundreds of GPS receivers and programs are supported. It also has powerful manipulation tools for such data. such as filtering duplicates points or simplifying tracks. It has been downloaded and used tens of millions of times since it was first created in 2001, so it's stable and trusted.</description>
@@ -30,10 +30,13 @@
     <tags>GPSBabel,gpx,kml,garmin,twonav,maps,formats</tags>
     <!-- Dependencies are automatically installed when the package is installed -->
     <dependencies>
-		<dependency id="IsraelHiking.GPSBabel.Runtime.Windows" version="1.5.5-beta.2" />
-		<dependency id="IsraelHiking.GPSBabel.Runtime.Debian" version="1.5.5-beta.2" />
     </dependencies>
   </metadata>
+
+  <!-- A readme.txt to display when the package is installed -->
   <files>
+    <file src="IsraelHiking.GPSBabel.Runtime.Debian.targets" target="build\" />
+    <file src="debian\*.so.*" target="runtimes\debian\native\" />
+    <file src="debian\*.exe" target="runtimes\debian\native\" />
   </files>
 </package>

@@ -61,11 +61,11 @@ namespace GpsBabelWebApi
                 stream.CopyTo(fileStream);
             }
 
-            var arguments = "-N -i " + inputFormat + " -f \"" + inputTempfileName + "\" -o " + outputFormat + " -F \"" +
-                            outputTempfileName + "\" " + (parameters ?? string.Empty);
-            var osDirectory = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
-                ? "win-x64"
-                : "linux-x64";
+            var arguments = "-i " + inputFormat + " -f \"" + inputTempfileName + "\" " + (parameters ?? string.Empty) + " -o " + outputFormat + " -F \"" +
+                            outputTempfileName + "\"";
+            var osDirectory = RuntimeInformation.OSDescription.ToLowerInvariant().Contains("win")
+                ? "win"
+                : "debian";
             var dllFolder = Path.GetDirectoryName(Assembly.GetAssembly(typeof(ExecuteController)).Location);
             var workingDirectory = Path.Combine(dllFolder, "runtimes", osDirectory, "native");
             using (var process = Process.Start(new ProcessStartInfo
