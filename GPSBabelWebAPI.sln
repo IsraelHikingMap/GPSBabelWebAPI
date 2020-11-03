@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IsraelHiking.GPSBabel", "IsraelHiking.GPSBabel\IsraelHiking.GPSBabel.csproj", "{0DB4C6AC-3481-41ED-AA58-E4A8BC2F4B9E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,10 +22,6 @@ Global
 		{D79B15C2-290E-4670-9609-CC4E99ADA63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D79B15C2-290E-4670-9609-CC4E99ADA63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D79B15C2-290E-4670-9609-CC4E99ADA63E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DB4C6AC-3481-41ED-AA58-E4A8BC2F4B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DB4C6AC-3481-41ED-AA58-E4A8BC2F4B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DB4C6AC-3481-41ED-AA58-E4A8BC2F4B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DB4C6AC-3481-41ED-AA58-E4A8BC2F4B9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

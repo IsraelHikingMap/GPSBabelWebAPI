@@ -1,9 +1,7 @@
-﻿using System.IO;
-using GPSBabelWebAPI;
-using IsraelHiking.GPSBabel;
+﻿using System.Diagnostics;
+using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace GpsBabelWebApi
 {
@@ -13,11 +11,9 @@ namespace GpsBabelWebApi
     [Route("")]
     public class GPSBabelController : Controller
     {
-        private readonly IGPSBabelConverter _gpsBabelConverter;
-
         public GPSBabelController()
         {
-            _gpsBabelConverter = new GPSBabelConverter();
+            
         }
 
 
@@ -31,8 +27,7 @@ namespace GpsBabelWebApi
         /// <param name="parameters">Additional parameters to use between input and output parameters</param>
         /// <returns>A converted binary data representing the converted file</returns>
         [HttpPost]
-        [SwaggerOperationFilter(typeof(RequiredFileUploadParams))]
-        public IActionResult Post([FromForm]IFormFile file, [FromForm]string inputFormat, [FromForm]string outputFormat, [FromForm] string parameters)
+        public IActionResult Post(IFormFile file, [FromForm]string inputFormat, [FromForm]string outputFormat, [FromForm] string parameters)
         {
             if (file == null)
             {
@@ -45,8 +40,31 @@ namespace GpsBabelWebApi
             }
             var memoryStream = new MemoryStream();
             file.CopyTo(memoryStream);
-            var outputContent = _gpsBabelConverter.Run(memoryStream.ToArray(), inputFormat, outputFormat, parameters);
+            var outputContent = Convert(memoryStream.ToArray(), inputFormat, outputFormat, parameters);
             return File(outputContent, "application/octet-stream");
+        }
+
+        private byte[] Convert(byte[] content, string inputFormat, string outputFormat, string parameters)
+        {
+            var inputTempfileName = Path.GetTempFileName();
+            System.IO.File.WriteAllBytes(inputTempfileName, content);
+            // file names are created to overcome utf-8 issues in file name.
+            var outputTempfileName = Path.GetTempFileName();
+            var arguments = "-i " + inputFormat + " -f \"" + inputTempfileName + "\" " + (parameters ?? string.Empty) + " -o " + outputFormat + " -F \"" +
+                            outputTempfileName + "\"";
+            using var process = Process.Start(new ProcessStartInfo
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                Arguments = arguments,
+                WorkingDirectory = Path.GetTempPath(),
+                FileName = "gpsbabel"
+            });
+            process.WaitForExit(100000);
+            System.IO.File.Delete(inputTempfileName);
+            var outputContent = System.IO.File.ReadAllBytes(outputTempfileName);
+            System.IO.File.Delete(outputTempfileName);
+            return outputContent;
         }
     }
 }
