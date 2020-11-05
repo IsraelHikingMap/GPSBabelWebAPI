@@ -1,0 +1,7 @@
+version: '3.4'
+services:
+  gpsbabelwebapi:
+    build: .
+    ports:
+      - 8988:80
+    restart: always
