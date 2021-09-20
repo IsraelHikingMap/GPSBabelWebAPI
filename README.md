@@ -1,7 +1,7 @@
 # GPSBabelWebAPI
 This repository holds the key building blocks to create the GPSBabel web API based on docker.
 
-It uses ASP .Net core to run the server to recieve HTTP calls. It uses apt-get to install gpsbabel executable globally. This project can't be tested locally if gpsbabel in not installed globally - therefore it is advised to build the docker image and run it to get it working:
+It uses ASP .Net core to run the server to receive HTTP calls. It uses apt-get to install gpsbabel executable globally. This project can't be tested locally if gpsbabel in not installed globally - therefore it is advised to build the docker image and run it to get it working:
 
 ```
 docker build -t gpsbabel-webapi .
