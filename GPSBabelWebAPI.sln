@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPSBabelWebAPI", "GPSBabelWebAPI\GPSBabelWebAPI.csproj", "{D79B15C2-290E-4670-9609-CC4E99ADA63E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPSBabelWebAPI", "src\GPSBabelWebAPI.csproj", "{D79B15C2-290E-4670-9609-CC4E99ADA63E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0EBB9595-6D04-468D-B6B3-E0D606A9ECD5}"
 	ProjectSection(SolutionItems) = preProject
